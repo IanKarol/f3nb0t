@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const config = require("../botconfig.json");
 
 exports.run = async (client, message, args) => {
 
@@ -86,7 +87,7 @@ exports.run = async (client, message, args) => {
     let helpEmbed = new Discord.RichEmbed()
     .setAuthor("f3nb0t", client.user.displayAvatarURL)
     .setDescription("**Use** `f!help {command_name}` **for usage of specified command**")
-    .setColor("#FF0000")
+    .setColor(config.green)
     .addField("Regular Commands", "f!aliases - showing aliases for all bot commands\nf!codeblock - putting your code in JS codeblock\nf!help - showing help menu\nf!info - small info about pinged user\nf!ping - showing you internet latency")
     .addField("Moderator Commands", "f!clear - clearing specified number of messages")
     .addField("Bot Owner Commands", "f!plug - plugging specified **[twitct.tv](https://www.twitch.tv)** stream\nf!statusclear - clearing bot status");
