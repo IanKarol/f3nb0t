@@ -4,7 +4,7 @@ const config = require("../botconfig.json");
 
 exports.run = (client, message) => {
 
-  if (message.author.id !== config.ownerid) return;
+  if (message.author.id !== config.ownerID) return;
 
   client.user.setActivity('');
 
