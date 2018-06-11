@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const config = require("../botconfig.json");
 
 exports.run = (client, message, args) => {
-  if (message.author.id !== config.ownerid) return message.channel.send("Huh.");
+  if (message.author.id !== config.ownerID) return message.channel.send("Huh.");
   const username = args.join(' ');
   if (username.length === 0) {
     const embed = new Discord.RichEmbed()
