@@ -205,4 +205,4 @@ fs.readdir("./events/", (err, files) => {
 
 //});
 
-bot.login(tokenfile.token);
+bot.login(process.env.token);
