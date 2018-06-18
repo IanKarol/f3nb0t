@@ -5,7 +5,6 @@ const config = require("../botconfig.json");
 exports.run = (client, message) => {
 
   if (message.author.id !== config.ownerID) return;
-  if (args[0] !== "clear") return;
 
   client.user.setActivity('');
 
@@ -14,7 +13,7 @@ exports.run = (client, message) => {
 };
 
 exports.conf = {
-  aliases: ['st']
+  aliases: ['sc']
 }
 
 exports.help = {
