@@ -10,6 +10,7 @@ exports.run = async (client, message, args) => {
     let ping = args[0] === "ping";
     let klir = args[0] === "clear";
     let pluganje = args[0] === "plug";
+    let setajstatus = args[0] === "status";
     let brisistatus = args[0] === "statusclear";
 
     if (aliasi) {
@@ -74,6 +75,15 @@ exports.run = async (client, message, args) => {
         message.channel.send(pluganjeEmbed);
         return;
     }
+    
+    if (setajstatus) {
+        let setajstatusEmbed = new Discord.RichEmbed()
+        .setColor(config.green)
+        .setDescription("To use `f!status` command you need specify status and execute it like `f!status {online/invisible/dnd/idle}`");
+
+        message.channel.send(setajstatusEmbed);
+        return;
+    }
 
     if (brisistatus) {
         let brisistatusEmbed = new Discord.RichEmbed()
@@ -90,7 +100,7 @@ exports.run = async (client, message, args) => {
     .setColor(config.green)
     .addField("Regular Commands", "f!aliases - showing aliases for all bot commands\nf!codeblock - putting your code in JS codeblock\nf!help - showing help menu\nf!info - small info about pinged user\nf!ping - showing you internet latency")
     .addField("Moderator Commands", "f!clear - clearing specified number of messages")
-    .addField("Bot Owner Commands", "f!plug - plugging specified **[twitct.tv](https://www.twitch.tv)** stream\nf!statusclear - clearing bot status");
+    .addField("Bot Owner Commands", "f!plug - plugging specified **[twitct.tv](https://www.twitch.tv)** stream\nf!status - changing bot status\nf!statusclear - clearing bot status");
 
     message.channel.send(helpEmbed);
 
