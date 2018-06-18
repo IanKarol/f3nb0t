@@ -13,7 +13,6 @@ let statuses = {
 "away": "idle"
 }
 if(!args[0]) return msg.channel.send("Please specify the status!");
-if(message.author.id !== config.ownerID) return msg.reply("You are not my owner!");
 let status = statuses[args[0].toLowerCase()]; 
 if(!status) {
 return msg.channel.send(`Apparently I'm an idiot because ${status} isn't a valid status. Fucking derp.`).then(setTimeout(msg.delete.bind(msg), 1000)); 
