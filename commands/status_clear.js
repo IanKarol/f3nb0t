@@ -2,10 +2,9 @@ const Discord = require('discord.js');
 const config = require("../botconfig.json");
 
 
-exports.run = (client, message, args) => {
+exports.run = (client, message) => {
 
   if (message.author.id !== config.ownerID) return;
-  if(args[0] !== "clear") return;
 
   client.user.setActivity('');
 
@@ -14,9 +13,9 @@ exports.run = (client, message, args) => {
 };
 
 exports.conf = {
-  aliases: ['s']
+  aliases: ['sc']
 }
 
 exports.help = {
-  name: "status"
+  name: "statusclear"
 }
