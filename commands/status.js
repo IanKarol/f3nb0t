@@ -12,7 +12,7 @@ let statuses = {
 "idle": "idle",
 "away": "idle"
 };
-if(message.author.id !== config.ownerID) return msg.reply("You do not have bot owner permissions to use that command!").then(msg => msg.delete(2655));
+if(msg.author.id !== config.ownerID) return msg.reply("You do not have bot owner permissions to use that command!").then(msg => msg.delete(2655));
 if(!args[0]) return msg.channel.send("Please specify the status!");
 let status = statuses[args[0].toLowerCase()]; 
 if(!status) {
