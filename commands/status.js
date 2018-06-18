@@ -1,5 +1,6 @@
 const config = require("../botconfig.json");
 exports.run = (client, msg, args) => {
+msg.delete();
 let statuses = {
 "online": "online",
 "on": "online",
