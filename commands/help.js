@@ -109,7 +109,7 @@ exports.run = async (client, message, args) => {
     .setDescription("**Use** `f!help {command_name}` **for usage of specified command**")
     .setColor(config.green)
     .addField("Regular Commands", "f!aliases - showing aliases for all bot commands\nf!codeblock - putting your code in JS codeblock\nf!help - showing help menu\nf!info - small info about pinged user\nf!ping - showing you internet latency")
-    .addField("Moderator Commands", "f!clear - clearing specified number of messages")
+    .addField("Moderator Commands", "f!clear - clearing specified number of messages\nf!kick - kicking user from the server")
     .addField("Bot Owner Commands", "f!plug - plugging specified **[twitct.tv](https://www.twitch.tv)** stream\nf!status - changing bot status\nf!statusclear - clearing bot status");
 
     message.channel.send(helpEmbed);
