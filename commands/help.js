@@ -7,6 +7,7 @@ exports.run = async (client, message, args) => {
     let kodblok = args[0] === "codeblock";
     let pomoc = args[0] === "help";
     let informacije = args[0] === "info";
+    let kik = args[0] === "kick";
     let ping = args[0] === "ping";
     let klir = args[0] === "clear";
     let pluganje = args[0] === "plug";
@@ -46,6 +47,15 @@ exports.run = async (client, message, args) => {
         .setDescription("To use `f!info` command and get info about yourself just execute it but if you want get info from other people you need execute it like `f!info {user / userID}`");
 
         message.channel.send(informacijeEmbed);
+        return;
+    }
+    
+     if (kik) {
+        let kikEmbed = new Discord.RichEmbed()
+        .setColor(config.green)
+        .setDescription("To use `f!kick` command you need specify user to kick and reason, without any of this arguments command will not work, and then use command like `f!kick {user / userID} {reason}`");
+
+        message.channel.send(kikEmbed);
         return;
     }
 
