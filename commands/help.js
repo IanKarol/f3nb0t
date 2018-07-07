@@ -13,6 +13,7 @@ exports.run = async (client, message, args) => {
     let pluganje = args[0] === "plug";
     let setajstatus = args[0] === "status";
     let brisistatus = args[0] === "statusclear";
+    let gledajvrijeme = args[0] === "weather";
 
     if (aliasi) {
         let aliasEmbed = new Discord.RichEmbed()
@@ -103,12 +104,21 @@ exports.run = async (client, message, args) => {
         message.channel.send(brisistatusEmbed);
         return;
     }
+    
+    if (gledajvrijeme) {
+        let gledajvrijemeEmbed = new Discord.RichEmbed()
+        .setColor(config.green)
+        .setDescription("To use `f!weather` command you need specify a town and then it need look like `f!weather {town}`");
+
+        message.channel.send(gledajvrijemeEmbed);
+        return;
+    }
 
     let helpEmbed = new Discord.RichEmbed()
     .setAuthor("f3nb0t", client.user.displayAvatarURL)
     .setDescription("**Use** `f!help {command_name}` **for usage of specified command**")
     .setColor(config.green)
-    .addField("Regular Commands", "f!aliases - showing aliases for all bot commands\nf!codeblock - putting your code in JS codeblock\nf!help - showing help menu\nf!info - small info about pinged user\nf!ping - showing you internet latency")
+    .addField("Regular Commands", "f!aliases - showing aliases for all bot commands\nf!codeblock - putting your code in JS codeblock\nf!help - showing help menu\nf!info - small info about pinged user\nf!ping - showing you internet latency\nf!weather - showing weather about given town")
     .addField("Moderator Commands", "f!clear - clearing specified number of messages\nf!kick - kicking user from the server")
     .addField("Bot Owner Commands", "f!plug - plugging specified **[twitct.tv](https://www.twitch.tv)** stream\nf!status - changing bot status\nf!statusclear - clearing bot status");
 
