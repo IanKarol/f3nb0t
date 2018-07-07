@@ -27,7 +27,7 @@ module.exports.run = (client, message, args) => {
 }
 
 module.exports.conf = {
-    aliases: []
+    aliases: ["w"]
   }
 
 module.exports.help = {
