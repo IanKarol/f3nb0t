@@ -4,6 +4,7 @@ const config = require("../botconfig.json");
 exports.run = async (client, message, args) => {
 
     let aliasi = args[0] === "aliases";
+    let banaj = args[0] === "ban";
     let kodblok = args[0] === "codeblock";
     let pomoc = args[0] === "help";
     let informacije = args[0] === "info";
@@ -21,6 +22,15 @@ exports.run = async (client, message, args) => {
         .setDescription("To use `f!aliases` command just execute it and it will show all aliases for every bot command");
 
         message.channel.send(aliasEmbed);
+        return;
+    }
+    
+    if (banaj) {
+        let banajEmbed = new Discord.RichEmbed()
+        .setColor(config.green)
+        .setDescription("To use `f!ban` command you need specify user to ban and reason, without any of this arguments command will not work, and then use command like `f!ban {user / userID} {reason}`");
+
+        message.channel.send(banajEmbed);
         return;
     }
 
@@ -119,7 +129,7 @@ exports.run = async (client, message, args) => {
     .setDescription("**Use** `f!help {command_name}` **for usage of specified command**")
     .setColor(config.green)
     .addField("Regular Commands", "f!aliases - showing aliases for all bot commands\nf!codeblock - putting your code in JS codeblock\nf!help - showing help menu\nf!info - small info about pinged user\nf!ping - showing you internet latency\nf!weather - showing weather about given town")
-    .addField("Moderator Commands", "f!clear - clearing specified number of messages\nf!kick - kicking user from the server")
+    .addField("Moderator Commands", "f!ban - banning user from the server\nf!clear - clearing specified number of messages\nf!kick - kicking user from the server")
     .addField("Bot Owner Commands", "f!plug - plugging specified **[twitct.tv](https://www.twitch.tv)** stream\nf!status - changing bot status\nf!statusclear - clearing bot status");
 
     message.channel.send(helpEmbed);
