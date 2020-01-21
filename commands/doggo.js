@@ -17,7 +17,7 @@ exports.run = async (bot,message,args) => {
 }
 
 exports.conf = {
-    aliases: ["dog"]
+    aliases: ['dog']
 }
 
 exports.help = {
