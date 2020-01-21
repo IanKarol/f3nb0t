@@ -16,6 +16,6 @@
     "path": "^0.12.7",
     "weather-js": "^2.0.0",
     "superagent": "^5.2.1",
-    "strict-uri-encode": "^2.0.0"
+    "ms": "^2.1.2"
   }
 }
